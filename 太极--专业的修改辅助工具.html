@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://47.98.153.48/taiji-legacy/#download -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<script type="text/javascript" src="./太极--专业的修改辅助工具_files/z_stat.php"></script><script src="./太极--专业的修改辅助工具_files/core.php" charset="utf-8" type="text/javascript"></script></head><body class="-dark-mode mdui-theme-layout-dark mdui-theme-primary-teal mdui-theme-accent-blue mdui-appbar-with-toolbar mdui-appbar-with-tab mdui-loaded" style=""><a href="https://www.cnzz.com/stat/website.php?web_id=1279234220" target="_blank" title="站长统计">站长统计</a>
+	<script src="./太极--专业的修改辅助工具_files/mdui.min.js"></script>
+	<link href="./太极--专业的修改辅助工具_files/mdui.min.css" rel="stylesheet">
+	<script src="./太极--专业的修改辅助工具_files/download.js"></script>
+	<script src="./太极--专业的修改辅助工具_files/jquery-3.5.1.min.js"></script>
+	<script src="./太极--专业的修改辅助工具_files/toolUtil.js"></script>
+	<script src="./太极--专业的修改辅助工具_files/scripts.js"></script>
+	<link href="./太极--专业的修改辅助工具_files/styles.css" rel="stylesheet">
+	<title>太极--专业的修改辅助工具</title>
+	<style>
+		* {
+			user-select: none;
+			font-family: "Fira Code";
+		}
+
+		[title="站长统计"] {
+			display: none;
+		}
+
+		.mdui-drawer {
+			overflow-y: scroll;
+		}
+
+		#download_table_shell,
+		#pvz2mod_table_shell {
+			overflow-y: scroll;
+			padding: 8px 8px 8px 8px;
+			border-style: solid;
+			border-color: rgba(0, 0, 0, 0.25);
+		}
+
+		#download_table_shell>table>tbody>tr>td,
+		#pvz2mod_table_shell>table>tbody>tr>td {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		caption {
+			text-align: center !important;
+			font-size: larger !important;
+			font-weight: bolder !important;
+		}
+
+		[_sgn] {
+			display: inline;
+			margin: 2px 4px 2px 4px;
+			padding: 2px 8px 2px 8px;
+			border-radius: 0.25em;
+			background-color: #f7f7f9;
+		}
+		.-dark-mode [_sgn] {
+    		background-color: #424242;
+		}
+		
+		[_sgn='red'] {
+			color: #c7254e;
+		}
+		.-dark-mode [_sgn='red'] {
+			color: #ffcdd2;
+		}
+
+		[_sgn='blue'] {
+			color: #3d25c7;
+		}
+		.-dark-mode [_sgn='blue'] {
+    		color: #448aff;
+		}
+
+		[_sgn='var'] {
+			color: #c77325;
+		}
+		.-dark-mode [_sgn='var'] {
+			color: #FFF59D;
+		}
+
+		[_sgn='mark'] {
+			color: #da5420;
+		}
+		.-dark-mode [_sgn='mark'] {
+			color: #ffc49d;
+		}
+
+		[_with-desc] {
+			text-decoration: underline;
+		}
+
+		[_sgn='code'] {
+			color: #c7254e;
+		}
+		.-dark-mode [_sgn='code'] {
+			color: #ffcdd2;
+		}
+
+		[_sgn='precondition'] {
+			background-color: black;
+			color: white;
+		}
+		.-dark-mode [_sgn='precondition'] {
+			background-color: rgba(0, 0, 0, 0.5);
+			color: white;
+		}
+
+		[_sgn='important'] {
+			background-color: black;
+			color: white;
+		}
+		.-dark-mode [_sgn='important'] {
+			color: white;
+		}
+
+		.user-guide {
+			width: 80%;
+			margin-top: 8px;
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 12px;
+			padding-left: 5%;
+			padding-right: 5%;
+			border-left-style: solid;
+			border-right-style: solid;
+			border-color: rgba(0, 0, 0, 0.2);
+		}
+
+		.user-guide .main-heading {
+			font-size: xx-large;
+		}
+
+		.user-guide .content {
+			margin-left: auto;
+			margin-right: auto;
+			border-left: 3px solid;
+		}
+
+		.user-guide .content * {
+			margin-left: 30px;
+		}
+
+		.user-guide .section hr {
+			width: 80%;
+		}
+
+		.user-guide .section .heading-major {
+			font-size: x-large;
+			font-weight: bold;
+		}
+
+		.user-guide .section .heading-minor {
+			font-size: large;
+			font-weight: bold;
+		}
+
+		.user-guide .section .heading-smaller {
+			font-weight: bold;
+		}
+
+		.user-guide .func-info {
+			text-align: left;
+		}
+
+		.user-guide .func-info p {
+			margin-bottom: 0;
+		}
+
+		.user-guide .func-info>:nth-child(1) {
+			/* func name */
+			font-size: larger;
+			font-weight: bold;
+			/* sgn-red */
+			display: inline;
+			margin: 2px 4px 2px 4px;
+			padding: 4px 8px 4px 8px;
+			border-radius: 0.25em;
+			background-color: #f7f7f9;
+			color: #c7254e;
+		}
+		.-dark-mode .user-guide .func-info>:nth-child(1) {
+    		background-color: #424242;
+			color: #ffcdd2;
+		}
+
+		.user-guide .func-info>:nth-child(2) {
+			/* func desc */
+			font-weight: bold;
+		}
+
+		.user-guide .func-info>ul>li>:nth-child(1) {
+			/* parm name */
+			font-weight: bold;
+			/* sgn-blue */
+			display: inline;
+			margin: 2px 4px 2px 4px;
+			padding: 4px 8px 4px 8px;
+			border-radius: 0.25em;
+			background-color: #f7f7f9;
+			color: #3d25c7;
+		}
+		.-dark-mode .user-guide .func-info>ul>li>:nth-child(1) {
+    		background-color: #424242;
+    		color: #448aff;
+		}
+
+		.user-guide .func-info>ul>li>:nth-child(2) {
+			/* parm desc */
+		}
+
+		.user-guide .donate-pic {
+			width: 10%;
+		}
+
+	</style>
+
+
+
+	<div class="mdui-dialog" id="dialog-docs-theme">				<div class="mdui-dialog-title">Color</div>				<div class="mdui-dialog-content">					<p class="mdui-typo-title">Theme</p>					<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">						<div class="mdui-col">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-layout" value="">								<i class="mdui-radio-icon"></i>								Light							</label>						</div>						<div class="mdui-col">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-layout" value="dark" checked="">								<i class="mdui-radio-icon"></i>								Dark							</label>						</div>					</div>					<p class="mdui-typo-title mdui-text-color-theme">Primary</p>					<form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">						<div class="mdui-col mdui-text-color-amber">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="amber">								<i class="mdui-radio-icon"></i>								Amber							</label>						</div>						<div class="mdui-col mdui-text-color-blue">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="blue">								<i class="mdui-radio-icon"></i>								Blue							</label>						</div>						<div class="mdui-col mdui-text-color-blue-grey">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="blue-grey">								<i class="mdui-radio-icon"></i>								Blue Grey							</label>						</div>						<div class="mdui-col mdui-text-color-brown">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="brown">								<i class="mdui-radio-icon"></i>								Brown							</label>						</div>						<div class="mdui-col mdui-text-color-cyan">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="cyan">								<i class="mdui-radio-icon"></i>								Cyan							</label>						</div>						<div class="mdui-col mdui-text-color-deep-orange">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="deep-orange">								<i class="mdui-radio-icon"></i>								Deep Orange							</label>						</div>						<div class="mdui-col mdui-text-color-deep-purple">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="deep-purple">								<i class="mdui-radio-icon"></i>								Deep Purple							</label>						</div>						<div class="mdui-col mdui-text-color-green">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="green">								<i class="mdui-radio-icon"></i>								Green							</label>						</div>						<div class="mdui-col mdui-text-color-grey">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="grey">								<i class="mdui-radio-icon"></i>								Grey							</label>						</div>						<div class="mdui-col mdui-text-color-indigo">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="indigo">								<i class="mdui-radio-icon"></i>								Indigo							</label>						</div>						<div class="mdui-col mdui-text-color-light-blue">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="light-blue">								<i class="mdui-radio-icon"></i>								Light Blue							</label>						</div>						<div class="mdui-col mdui-text-color-light-green">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="light-green">								<i class="mdui-radio-icon"></i>								Light Green							</label>						</div>						<div class="mdui-col mdui-text-color-lime">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="lime">								<i class="mdui-radio-icon"></i>								Lime							</label>						</div>						<div class="mdui-col mdui-text-color-orange">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="orange">								<i class="mdui-radio-icon"></i>								Orange							</label>						</div>						<div class="mdui-col mdui-text-color-pink">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="pink">								<i class="mdui-radio-icon"></i>								Pink							</label>						</div>						<div class="mdui-col mdui-text-color-purple">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="purple">								<i class="mdui-radio-icon"></i>								Purple							</label>						</div>						<div class="mdui-col mdui-text-color-red">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="red">								<i class="mdui-radio-icon"></i>								Red							</label>						</div>						<div class="mdui-col mdui-text-color-teal">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="teal" checked="">								<i class="mdui-radio-icon"></i>								Teal							</label>						</div>						<div class="mdui-col mdui-text-color-yellow">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-primary" value="yellow">								<i class="mdui-radio-icon"></i>								Yellow							</label>						</div>					</form>					<p class="mdui-typo-title mdui-text-color-theme-accent">Accent</p>					<form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">						<div class="mdui-col mdui-text-color-amber">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="amber">								<i class="mdui-radio-icon"></i>								Amber							</label>						</div>						<div class="mdui-col mdui-text-color-blue">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="blue" checked="">								<i class="mdui-radio-icon"></i>								Blue							</label>						</div>						<div class="mdui-col mdui-text-color-cyan">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="cyan">								<i class="mdui-radio-icon"></i>								Cyan							</label>						</div>						<div class="mdui-col mdui-text-color-deep-orange">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="deep-orange">								<i class="mdui-radio-icon"></i>								Deep Orange							</label>						</div>						<div class="mdui-col mdui-text-color-deep-purple">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="deep-purple">								<i class="mdui-radio-icon"></i>								Deep Purple							</label>						</div>						<div class="mdui-col mdui-text-color-green">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="green">								<i class="mdui-radio-icon"></i>								Green							</label>						</div>						<div class="mdui-col mdui-text-color-indigo">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="indigo">								<i class="mdui-radio-icon"></i>								Indigo							</label>						</div>						<div class="mdui-col mdui-text-color-light-blue">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="light-blue">								<i class="mdui-radio-icon"></i>								Light Blue							</label>						</div>						<div class="mdui-col mdui-text-color-light-green">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="light-green">								<i class="mdui-radio-icon"></i>								Light Green							</label>						</div>						<div class="mdui-col mdui-text-color-lime">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="lime">								<i class="mdui-radio-icon"></i>								Lime							</label>						</div>						<div class="mdui-col mdui-text-color-orange">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="orange">								<i class="mdui-radio-icon"></i>								Orange							</label>						</div>						<div class="mdui-col mdui-text-color-pink">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="pink">								<i class="mdui-radio-icon"></i>								Pink							</label>						</div>						<div class="mdui-col mdui-text-color-purple">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="purple">								<i class="mdui-radio-icon"></i>								Purple							</label>						</div>						<div class="mdui-col mdui-text-color-red">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="red">								<i class="mdui-radio-icon"></i>								Red							</label>						</div>						<div class="mdui-col mdui-text-color-teal">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="teal">								<i class="mdui-radio-icon"></i>								Teal							</label>						</div>						<div class="mdui-col mdui-text-color-yellow">							<label class="mdui-radio mdui-m-b-1">								<input type="radio" name="doc-theme-accent" value="yellow">								<i class="mdui-radio-icon"></i>								Yellow							</label>						</div>					</form>				</div>				<div class="mdui-divider"></div>				<div class="mdui-dialog-actions">					<button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel="">Default</button>					<button class="mdui-btn mdui-ripple" mdui-dialog-confirm="">OK</button>				</div>			</div>
+	<div class="mdui-appbar mdui-appbar-fixed">
+		<div class="mdui-toolbar mdui-color-theme">
+			<button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{ content: &quot;toggle drawer&quot; }" mdui-drawer="{ target: &quot;#left_drawer&quot; }">
+				<i class="mdui-icon material-icons">menu</i>
+			</button>
+			<p class="mdui-typo-title">太极--专业的修改辅助工具</p>
+			<button id="about" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{ content: &quot;关于&quot; }">
+				<i class="mdui-icon material-icons">info_outline</i>
+			</button>
+			<button class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{ content: &quot;change color&quot; }" mdui-dialog="{ target: &quot;#dialog-docs-theme&quot; }">
+				<i class="mdui-icon material-icons">color_lens</i>
+			</button>
+			<div class="mdui-toolbar-spacer"></div>
+		</div>
+		<div id="interface_select" class="mdui-tab mdui-tab-full-width mdui-color-theme" mdui-tab="{ loop: true }">
+			<a href="https://47.98.153.48/taiji-legacy/#user-guide" class="mdui-ripple mdui-tab-active" mdui-tooltip="{ content: &quot;用户手册&quot; }"><div class="mdui-ripple-wave mdui-ripple-wave-fill" style="width: 339.194px; height: 339.194px; margin-top: -169.597px; margin-left: -169.597px; left: 226px; top: 18.3334px; transform: translate3d(-58.1095px, 5.66663px, 0px) scale(1.01);"></div><i class="mdui-icon material-icons">person</i></a>
+			<a href="https://47.98.153.48/taiji-legacy/#download" class="mdui-ripple" mdui-tooltip="{ content: &quot;程序下载&quot; }"><i class="mdui-icon material-icons">file_download</i></a>
+			<a href="https://47.98.153.48/taiji-legacy/#pvz2mod" class="mdui-ripple" mdui-tooltip="{ content: &quot;PvZ2Mod下载&quot; }"><i class="mdui-icon material-icons">apps</i></a>
+		<div class="mdui-tab-indicator" style="left: 0px; width: 335.781px;"></div></div>
+	</div>
+	<div id="left_drawer" class="mdui-drawer mdui-drawer-close mdui-shadow-16">
+	</div>
+	<div class="mdui-container-fluid mdui-m-t-2">
+		<div id="user-guide" class="mdui-container-fluid" style="">
+			<div class="user-guide">
+				<div class="shell">
+					<div class="mdui-typo">
+						<h1>太极TaiJi【用户指南】</h1>
+						<div class="mdui-type">
+							<p class="mdui-typo-subheading">友情链接： <a target="_blank" href="https://pvz2.finbird.site/">PvZ2吧资源小站</a></p>
+						</div>
+						<p><strong>This document is produced by SMALLPC and the language is <u>Chinese</u>. If you cannot understand Chinese, you can view the <u>English</u> tutorial made by <a target="_blank" href="https://ernestoam.fandom.com/wiki/Plants_vs._Zombies_2_Hacking_Tools/Taiji">ErnestoAM</a></strong></p>
+						<nav class="content">
+							<a href="https://47.98.153.48/taiji-legacy/#jie-shao">介绍</a>
+							<br>
+							<a href="https://47.98.153.48/taiji-legacy/#shi-yong">使用</a>
+							<br>
+							<a href="https://47.98.153.48/taiji-legacy/#han-shu">函数</a>
+							<br>
+						</nav>
+						<hr>
+						<div id="jie-shao" class="section">
+							<p class="heading-major">介绍</p>
+							<div>
+								<p class="heading-minor">“太极”是什么？</p>
+								<p>
+									一款以实现、简化 <strong>PvZ2</strong> 的数据修改为目的，由 <strong>smallpc</strong> 所开发的一款多功能辅助工具
+									<br>
+									前身为多年前制作的 <strong _with-desc="" mdui-tooltip="{ content: &quot;使用不便，早已废弃，不再维护&quot; }">PvZ-Tool</strong> ，
+									曾用名为 <strong _with-desc="" mdui-tooltip="{ content: &quot;3.x以下版本&quot; }">SPC-Util</strong> ，
+									现名为 <strong>太极(Tai-Ji)</strong>
+								</p>
+								<p>
+									“太极” 由 <strong>核心(core)</strong>、<strong>库(lib)</strong>、<strong>应用程序(app)</strong> 三者组成：
+									<br>
+									</p><ul>
+										<li>
+											<strong>core</strong> ：TaiJi本身功能的实现。对外暴露一些函数，以查询core信息、调用core功能。<strong>本文中的“太极版本”一词，若无说明，均指代core版本</strong>
+										</li>
+										<li>
+											<strong>lib</strong> ：core编译后，以库文件(lib)的形式发布，供app调用，版本与core保持一致。提供适用于Windows的DLL库文件与适用于Android的SO库文件
+										</li>
+										<li>
+											<strong>app</strong> ：用户可直接使用的软件，对于不同平台有如下app：
+											<ul>
+												<li>
+													<strong>app.windows.loader</strong> ：TaiJi加载器，适用于<abbr title="Windows 7 及以上版本">Windows</abbr>。此为命令行工具，无图形界面
+												</li>
+												<li>
+													<strong>app.android</strong> ：适用于Android的应用程序，目前仅支持ARM64设备，需要安卓版本至少为6.0
+												</li>
+											</ul>
+										</li>
+									</ul>
+								<p></p>
+								<table class="mdui-table mdui-table-dense">
+									<caption>最新版本参照表</caption>
+									<thead>
+										<tr>
+											<th>lib|app</th>
+											<th>版本</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>lib.windows.dynamic (x64|x32)</td>
+											<td>3.11.0</td>
+										</tr>
+										<tr>
+											<td>lib.android.dynamic (arm64)</td>
+											<td>3.11.0</td>
+										</tr>
+										<tr>
+											<td>app.windows.loader (x64|x32)</td>
+											<td>1.5.0</td>
+										</tr>
+										<tr>
+											<td>app.android (22+, arm64)</td>
+											<td>1.9.0</td>
+										</tr>
+									</tbody>
+								</table>
+								<ul>
+									<li>本教程的内容均以最新版本为准，新版本修复了旧版本中的bug，或增加了功能，请确保使用最新版本</li>
+									<li>为促使用户进行更新，core限制了可使用时间为每版本的core只可在<span _sgn="mark" _with-desc="" mdui-tooltip="{ content: &quot;北京时间 本月一日00:00:00至最后一日23:59:59&quot; }">发布日期所在的一月内</span>，开发者将会在每月的一号或二号进行core的更新，用户可通过app内置更新服务进行更新
+										<br>此限制仅校验设备本地时间，若超过日期仍要使用，可以调整系统时间。不推荐这样做，应该始终使用最新版，但可以通过此法在core已过期但开发者未发布新版本的时候强制运行</li>
+									<li>由于更改了网站设置，<span _sgn="mark">app.windows.loader 1.5.0 以下版本、app.android 1.9.0 以下版本</span>，均无法使用内置更新服务，需要手动在网站内下载最新版本app</li>
+									<li>在<span _sgn="code">version(core) &lt; 3.11.0</span>的版本中，程序运行具有驱动器限制，一次运行只能操作一个驱动器内的文件，3.11.0版本开始，此限制被解除</li>
+								</ul>
+							</div>
+							<hr>
+							<div>
+								<p class="heading-minor">“太极”能做些什么？</p>
+								<ul>
+									<li>RTON与JSON的相互转化</li>
+									<li>RSB|RSGP数据包的解包与打包</li>
+									<li>PTX图像的编码与解码、Atlas图像的拆分与合并</li>
+									<li>PAM动画的编码与解码、转换Flash|CSS</li>
+									<li>基于原生修改的拓展：JSON-Patch|RSB-PatchX|PvZ2-Mod。可方便的进行MOD制作</li>
+									<li>制作过程中对于一代游戏文件的支持：DZ|PAK数据包的解包与打包</li>
+									<li>......</li>
+								</ul>
+							</div>
+							<hr>
+							<div>
+								<p class="heading-minor">捐赠</p>
+								<p>
+									如果你喜欢我的工具，且拥有<strong>自己可支配</strong>的金钱，可以捐赠一定的金钱奖赏，激励我制作愈加完善的工具。
+									<br>
+									当然，如果你不进行任何捐赠，你依然可以使用公开版本的所有功能，本程序是免费、公开的。
+									<br>
+									捐赠时，请尽量备注你的网名。
+									<a href="javascript:;">查看捐赠名单</a>
+									<br>
+									<img class="donate-pic" src="./太极--专业的修改辅助工具_files/wechat.png">
+									<img class="donate-pic" src="./太极--专业的修改辅助工具_files/alipay.jpg">
+									<img class="donate-pic" src="./太极--专业的修改辅助工具_files/qq.png">
+								</p>
+							</div>
+						</div>
+						<hr>
+						<div id="shi-yong" class="section">
+							<p class="heading-major">使用</p>
+							<p>本节叙述了太极APP的使用方法</p>
+							<div>
+								<p class="heading-smaller">* PROGRAM-DIR *</p>
+								<p>
+									此值指向了程序数据文件夹，用以简化表示，app下载的文件均位于此文件夹中，如非用户主动操作，app的活动只限于此文件夹内
+									<br>不同系统中，指向的文件夹具体路径如下：
+									<br><span _sgn="mark">Windows</span>:<span _sgn="code">C:\ProgramData\cn.smallpc\taiji</span>注意："C:\ProgramData" 文件夹在Windows中是默认隐藏的，需要用户手动开启“显示隐藏项目”
+									<br><span _sgn="mark">Android</span>:<span _sgn="code">{ExteanalStorageDir}/Android/data/cn.smallpc.taiji.app.android/files/res</span>
+								</p>
+							</div>
+							<hr>
+							<div>
+								<p class="heading-minor">【Windows】Loader <small>-- app.windows.loader</small></p>
+								<div>
+									<p class="heading-smaller">* 下载 *</p>
+									<p>在 <a>下载界面</a> 内获取 <strong>太极-Loader.exe</strong>
+										<br><strong>注意</strong>：
+										loader分为64位与32位，32位设备只能使用32位的程序
+										<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打开程序后可能提示<span _sgn="mark">DLL库缺失</span>，需要安装MSVC运行库。微软官方下载链接：
+											| <a href="https://aka.ms/vs/16/release/VC_redist.x64.exe">x64</a>
+											| <a href="https://aka.ms/vs/16/release/VC_redist.x86.exe">x32</a> |
+									</p>
+								</div>
+								<div>
+									<p class="heading-smaller">* 更新|安装运行环境 *</p>
+									<p>在不提供参数（<span _sgn="mark" _with-desc="" mdui-tooltip="{ content: &quot;argc == 1&quot; }">直接双击打开程序</span>）而打开<span _sgn="mark">loader</span>的情况下，loader会准备进行<span _sgn="mark">更新/安装</span>，在程序窗口确定(按下任意按键)后，即可开始下载更新(安装)包，并自动更新(安装)库与所需的环境配置
+										<br><strong>更新服务必须在网络畅通时进行，务必保证网络连接的正常</strong>
+										</p><table class="mdui-table mdui-table-dense">
+											<caption>更新|安装过程所下载文件(放置于<span _sgn="code">{PROGRAM-DIR}</span>)</caption>
+											<thead>
+												<tr>
+													<th>文件</th>
+													<th>说明</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>loader.exe</td>
+													<td>最新版本loader程序，只有当前loader版本与服务器中loader版本不相符时才会下载</td>
+												</tr>
+												<tr>
+													<td>taiji.dll</td>
+													<td>最新版本核心库，只有当前核心库版本与服务器中核心库版本不相符时才会下载</td>
+												</tr>
+												<tr>
+													<td>env.json</td>
+													<td>Windows平台所需的运行环境配置文件</td>
+												</tr>
+												<tr>
+													<td>cfg/cfg.json</td>
+													<td>运行所需的cfg文件</td>
+												</tr>
+												<tr>
+													<td>cfg/script/[...].tjs</td>
+													<td>预置脚本文件</td>
+												</tr>
+												<tr>
+													<td>cfg/texture/[...].json</td>
+													<td>图像纹理映射文件</td>
+												</tr>
+												<tr>
+													<td>other/windows.shortcut.reg</td>
+													<td>在Explorer文件|文件夹右键菜单中添加“通过太极打开”的功能，需要loader已安装</td>
+												</tr>
+												<tr>
+													<td>other/windows.shortcut-remove.reg</td>
+													<td>删除 windows.shortcut.reg 构建的太极上下文选项</td>
+												</tr>
+											</tbody>
+										</table>
+									<p></p>
+								</div>
+								<div>
+									<p class="heading-smaller">* Explorer右键选项 *</p>
+									<p>每次都将目标文件/文件夹拖拽到loader.exe上，或许过于麻烦；可以将“通过TaiJi-Loader启动”添加到Explorer的右键菜单中
+										<br>
+										通过loader进行更新时会获取【添加|移除右键菜单选项的注册表文件】，双击合并对于功能的注册表文件应用即可
+										</p><ul>
+											<li><span _sgn="code">{PROGRAM-DIR}\other\windows.shortcut.reg</span>添加右键选项</li>
+											<li><span _sgn="code">{PROGRAM-DIR}\other\windows.shortcut-remove.reg</span>移除所添加的右键选项</li>
+										</ul>
+										添加右键选项之后，在Explorer中右键选中文件/文件夹，会出现如下选项：
+										<ul>
+											<li><span _sgn="blue">所有文件/文件夹</span>打开该路径，与 将 文件|文件夹 拖拽着 loader.exe 上释放的效果一致</li>
+											<li><span _sgn="blue">JSON文件</span>格式化、编码为RTON</li>
+											<li><span _sgn="blue">RTON文件</span>解码为JSON、加密、解密</li>
+											<li><span _sgn="blue">RSGP文件</span>解包</li>
+											<li><span _sgn="blue">RSB文件</span>解包、解包(工作模式)、解包(资源解析模式)、混淆</li>
+											<li><span _sgn="blue">PNG文件</span>转换为纯二进制纹理数据(PTX文件)</li>
+											<li><span _sgn="blue">PTX文件</span>转换为PNG图像</li>
+											<li><span _sgn="blue">PAM文件</span>解码、解码并转换为XFL、解码并转换为CSS-Info</li>
+											<li><span _sgn="blue">WEM文件</span>解码为WAV</li>
+										</ul>
+									<p></p>
+								</div>
+								<div>
+									<p class="heading-smaller">* 功能使用--执行脚本 *</p>
+									<p>太极的脚本文件拥有拓展名<span _sgn="code">tjs (TaiJi-Script)</span>，拖拽<span _sgn="code">*.tjs</span>文件到<span _sgn="mark">loader</span>上即可运行此脚本
+									</p>
+								</div>
+								<div>
+									<p class="heading-smaller">* 功能使用--QE模式 *</p>
+									<p>选择<abbr title="*.tjs 文件除外，程序会视其为脚本文件并直接执行">任意文件或文件夹</abbr>到<span _sgn="mark">loader</span>上，即可根据此文件|文件夹的路径与类型筛选可用的QE-Option，供用户选择
+										<br>关于QE模式，参阅：<a href="javascript:;">QE-Mode</a> 一节
+									</p>
+								</div>
+								<div>
+									<p class="heading-smaller" id="wem-cnv-env-desc">* WEM音频转换设置（可选） *</p>
+									<p>
+										程序本身无法进行音频编解码，而是通过 std::system 调用 <strong>ffmpeg.exe 与 ww2ogg.exe</strong> 完成音频的编解码。故，若需进行WEM转换，应自行进行以下操作：
+										</p><ul>
+											<li>
+												<a href="https://github.com/hcs64/ww2ogg/releases/tag/0.24">ww2ogg</a>
+												：下载获取<span _sgn="mark">ww2ogg024.zip</span>，提取出其中的<span _sgn="mark">ww2ogg.exe</span>与<span _sgn="mark">packed_codebooks_aoTuV_603.bin</span>
+											</li>
+											<li>
+												<a href="http://ffmpeg.org/">ffmpeg</a>
+												：下载获取<span _sgn="mark">zip</span>，提取出其中的<span _sgn="mark">ffmpeg.exe</span>
+											</li>
+										</ul>
+										，将上述三份提取出来的文件放置于<span _sgn="code">{PROGRAM-DIR}\extern</span>文件夹内
+									<p></p>
+									<p>
+										程序只会在运行<span _sgn="code">:Aduio:WwiseEncodedMedia:Encoder:DeCode</span>函数时才会对其进行调用，所以，即使未进行上述配置，也不影响其他功能的使用
+										<br>由于是通过调用 exe 程序完成转换功能，故此功能仅限于 Windows 设备使用
+									</p>
+								</div>
+							</div>
+							<hr>
+							<div>
+								<p class="heading-minor">【Android】App <small>-- app.android</small></p>
+								<div>
+									<p class="heading-smaller">* 安装 *</p>
+									<p>在下载界面内获取 <strong>太极.apk</strong> ，并安装<br>
+										<strong>注意</strong>：目前，App只支持<span _sgn="code">Android 6.0+</span>且<span _sgn="code" _with-desc="" mdui-tooltip="{ content: &quot;arm(32)库下，在需要申请大内存的情况下可能导致程序停止运行（如打包RSB）&quot; }">ABI = arm64-v8a</span>的设备。Android6.0以下无法安装，ABI非arm64-v8a的设备打开程序后会弹窗提示“设备不受支持”的信息
+									</p>
+								</div>
+								<div>
+									<p class="heading-smaller">* 权限获取 *</p>
+									<ol>
+										<li>进入<strong>“设置”</strong>界面</li>
+										<li>在“通用设置”一栏下可看到两个开关选项，呈灰色(闭合状态)表示未获取对应的权限，应如此做：
+											<ul>
+												<li>点击<strong>“存储权限”</strong>灰色开关，程序将弹出权限申请对话框，点击“允许”</li>
+												<li>点击<strong>“APK安装权限”</strong>灰色开关，程序将跳转至本应用的系统设置界面，点击“允许来自此来源的应用”（不同安卓设备显示的界面或文字可能有所不同）</li>
+											</ul>
+										</li>
+									</ol>
+								</div>
+								<div>
+									<p class="heading-smaller">* 更新/安装运行环境 *</p>
+									<ol>
+										<li>进入<strong>“关于”</strong>界面</li>
+										<li>点击<strong>“更新”</strong>按钮，程序会开始下载更新(安装)包，并自动为本设备安装库与所需的环境配置。<strong>更新服务必须在网络畅通时进行，务必保证网络连接的正常</strong></li>
+									</ol>
+									<p>在此界面中部，会显示三行文字，自上而下分别是<span _sgn="code">APP-VER(APP版本)、LIB-ABI(核心库支持的abi)、LIB-VER(核心库的版本)</span>若LIB-ABI与LIB-VER显示<span _sgn="code">unknown</span>，则表示核心库未正确安装</p>
+									<table class="mdui-table mdui-table-dense">
+										<caption>更新|安装过程所下载文件(放置于<span _sgn="code">{PROGRAM-DIR}</span>)</caption>
+										<thead>
+											<tr>
+												<th>文件</th>
+												<th>说明</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>../Download/app.apk</td>
+												<td>最新版本APP程序，只有当前APP版本与服务器中APP版本不相符时才会下载</td>
+											</tr>
+											<tr>
+												<td>../Download/libtaiji.so</td>
+												<td>最新版本核心库，只有当前核心库版本与服务器中核心库版本不相符时才会下载</td>
+											</tr>
+											<tr>
+												<td>cfg/cfg.json</td>
+												<td>运行所需的cfg文件</td>
+											</tr>
+											<tr>
+												<td>cfg/script/[...].tjs</td>
+												<td>预置脚本文件</td>
+											</tr>
+											<tr>
+												<td>cfg/texture/[...].json</td>
+												<td>图像纹理映射文件</td>
+											</tr>
+											<tr>
+												<td>other/android.shortcut.json</td>
+												<td>Android-App可用的快捷指令配置文件</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div>
+									<p class="heading-smaller">* 功能使用--快捷指令 *</p>
+									<p>“快捷指令”功能通过预定义的一系列指令集，简化了用户的使用，例如：快捷指令中由 “ZLib compress” 一项，执行后只需选择压缩源文件即可完成对文件的压缩，无需通过 QE模式|简单函数生成 等较繁琐的方式执行</p>
+									<ol>
+										<li>进入<strong>“执行指令”</strong>界面，在最上TAB选项里选择“快捷指令”一栏</li>
+										<li>程序界面上会显示定义于<span _sgn="code">android.shortcut.json</span>中的快捷指令列表。点击左侧的文本部分，可显示对此项快捷指令的功能释义；点击右侧“运行”按键，可执行此快捷指令</li>
+									</ol>
+								</div>
+								<div>
+									<p class="heading-smaller">* 功能使用--运行脚本 *</p>
+									<ol>
+										<li>进入<strong>“执行指令”</strong>界面，在最上TAB选项里选择“脚本”一栏</li>
+										<li>在<strong>文本框</strong>内填入脚本文件的<strong>绝对路径</strong>(右侧“选择”按钮可以打开文件管理器进行文件的选择)</li>
+										<li>选择完毕后点击文本框下一行的<strong>“执行脚本文件”</strong>按钮，即可执行脚本</li>
+									</ol>
+									<p>注意：输入的文件路径必须是从根目录开始的绝对路径，且形如<span _sgn="code">/storage/emulated/...</span>；其他如<span _sgn="code">/document/image-xxx</span>这类的路径无法被APP正确寻找，会提示文件未找到的错误</p>
+								</div>
+								<div>
+									<p class="heading-smaller">* 功能使用--QE模式 *</p>
+									<ol>
+										<li>进入<strong>“执行指令”</strong>界面，在最上TAB选项里选择“QE模式”一栏</li>
+										<li>在<strong>文本框</strong>内填入说要操作文件的<strong>绝对路径</strong>(右侧“选择”按钮可以打开文件管理器进行文件的选择)</li>
+										<li>选择完毕后，可以点击文本框上方的<strong>“执行QuickEnter”</strong>按钮，即可为此文件执行QE。这类似于Windows-Loader使用的拖拽启动QE功能，需要手动选择QE-Option</li>
+										<li>也可根据文本框下方提供的几个控件，选择所要执行的QE-Option，再点击<strong>“执行所选QuickEnter”</strong>按钮，即可根据所选QE-Option直接为此文件执行QE，而无需手动选择QE-Option</li>
+									</ol>
+									<p>
+										若开启文本框下方的 Batch 选项，则文本框内所填路径应为一个<span _sgn="mark">文件夹</span>，以作为Batch-QE-Mode的容器；在未开启状态下，右侧两个下拉框提供普通的QE-Option；开启后，提供BatchMode的QE-Option
+										<br>关于QE模式，参阅：<a href="javascript:;">QE-Mode</a> 一节
+									</p>
+								</div>
+								<div>
+									<p class="heading-smaller">* 功能使用--简单函数生成 *</p>
+									<ol>
+										<li>进入<strong>“执行指令”</strong>界面，在最上TAB选项里选择“函数”一栏</li>
+										<li>点击下拉框，可以看到函数表，选择其中一个函数，下方会生成此函数所需的参数之列表</li>
+										<li>填写完毕参数后，点击<strong>“生成函数指令并执行”</strong>按钮，程序会根据所填内容自动生成指令并执行</li>
+									</ol>
+									<p>此功能较为繁琐，且不适于无基础用户使用；函数表及参数释义参阅：<a href="https://47.98.153.48/taiji-legacy/#han-shu">函数</a> 一节</p>
+								</div>
+							</div>
+
+
+
+
+
+							<p class="heading-smaller">* Mod下载、安装 *</p>
+							<p>
+								进入网站的 <a>Mod下载界面</a> ，下载所需Mod包(zip压缩格式)，解压至<span _sgn="code">{PROGRAM-DIR}/mod</span>文件夹中
+								</p><p>...TODO</p>
+							<p></p>
+							<p class="heading-smaller">* MOD应用 *</p>
+							<p>
+								进入程序主界面，点击按钮进入<strong>“MOD管理器”</strong>界面，
+								</p><p>...TODO</p>
+							<p></p>
+							<div style="display: none;">
+								<hr>
+								<p class="heading-minor">【Windows】提供太极应用PvZ2-MOD包的方法</p>
+								<p>
+								</p><p>MOD环境配置：</p>
+								<ol>
+									<li>从mod下载界面获取mod的zip压缩包，解压得到后缀为 <strong>.tjpvz2mod</strong> 的文件夹，这就是太极的PvZ2-MOD包</li>
+									<li>从下载界面获取 <strong>mod.env.json</strong> 文件，移动到驱动器根目录下，并需要应用MOD的数据包也复制到驱动器的根目录下<br>以文本形式打开
+										<strong>mod.env.json</strong> 文件，在红线处填写数据包文件名(第二条红线对应处加上 .dir 后缀)，如图所示<br>
+										<img src="./太极--专业的修改辅助工具_files/pvz2mod-tutorial-env.png">
+									</li>
+									<li>对数据包应用MOD分为三部：开始MOD(数据包解包)，应用MOD包，完成MOD(数据包打包)<br>
+										开始MOD：选择 <strong>mod.env.json</strong> 到 <strong>Loader.exe</strong> 上释放，再选择 <strong>PvZ2-Mod</strong> 一栏下的
+										<strong>intro</strong> 选项，等待数据包解包完毕<br>
+										应用MOD包：选择 <strong>PvZ2-Mod包文件夹(带有后缀 .tjpvz2mod)</strong> 到 <strong>Loader.exe</strong> 上释放，窗口会提示 <strong>is batch mode ?</strong> 输入数字0，回车，再选择 <strong>PvZ2-Mod</strong> 一栏下的 <strong>apply</strong> 选项，弹出文件选择窗口，选择
+										<strong>mod.env.json</strong> 即可，等待MOD应用完毕<br>
+										结束MOD：步骤与<strong>开始MOD</strong>类似，最后一步选择 <strong>outro</strong> 选项，等待数据包打包完毕，即可得到应用MOD后的数据包<br>
+									</li>
+								</ol>
+								<p></p>
+							</div>
+							<div>
+								<p class="heading-minor">Quick-Enter Mode</p>
+								<p>Quick-Enter（下称 QE）模式，即“快速启动”</p>
+							</div>
+						</div>
+						<hr>
+						<div id="han-shu" class="section">
+							<p class="heading-major">函数</p>
+							<p>函数，是TaiJi运行的最核心之处，绝大多数高级功能(如解包、转码)都需要依靠调用TaiJi内置函数来达成
+								<br>若无说明，参数均不应取<span _sgn="var">null</span>
+							</p>
+							<hr>
+							<p class="heading-minor">Setting:JSON 系</p>
+							<p>影响本次进程中JSON的读写设置</p>
+							<hr>
+							<div class="func-info">
+								<p>:Setting:JSON:IOMem:realloc</p>
+								<p>重申请JSON读写所用内存</p>
+								<ul>
+									<li>
+										<p>Sz</p>
+										<p>内存大小</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Setting:JSON:Style:set</p>
+								<p>设置JSON输出格式</p>
+								<ul>
+									<li>
+										<p>NoLineFeedWhenElement</p>
+										<p>是否禁止数组元素间的换行</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">CFunc 系</p>
+							<p>调用C/C++函数</p>
+							<hr>
+							<div class="func-info">
+								<p>:CFunc:system</p>
+								<p>调用 std::system</p>
+								<ul>
+									<li>
+										<p>Cmd</p>
+										<p>cmd参数</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">Process 系</p>
+							<p>进程控制</p>
+							<hr>
+							<div class="func-info">
+								<p>:Process:delay</p>
+								<p>暂停进程一段时间</p>
+								<ul>
+									<li>
+										<p>Second</p>
+										<p>暂停时间，单位为秒</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Process:pause</p>
+								<p>暂停进程，等待用户作出响应后继续
+									<br>Windows-CMD上体现为窗口暂停并显示提示信息，用户输入任意键后继续
+									<br>Android上体现为弹出暂停提示窗口，用户点击确认按键后继续
+								</p>
+								<ul>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Process:exit</p>
+								<p>结束进程</p>
+								<ul>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">Clock 系</p>
+							<p>计时器使用</p>
+							<hr>
+							<div class="func-info">
+								<p>:Clock:new</p>
+								<p>创建一个计时器</p>
+								<ul>
+									<li>
+										<p>ID</p>
+										<p>计时器ID
+											<br><span _sgn="precondition">先决</span>ID未定义
+										</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Clock:delete</p>
+								<p>删除一个计时器</p>
+								<ul>
+									<li>
+										<p>ID</p>
+										<p>计时器ID
+											<br><span _sgn="precondition">先决</span>ID已定义
+										</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Clock:start</p>
+								<p>计时器归零并开始计时</p>
+								<ul>
+									<li>
+										<p>ID</p>
+										<p>计时器ID
+											<br><span _sgn="precondition">先决</span>ID已定义
+										</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Clock:stop</p>
+								<p>计时器停止计时</p>
+								<ul>
+									<li>
+										<p>ID</p>
+										<p>计时器ID
+											<br><span _sgn="precondition">先决</span>ID已定义
+										</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Clock:show</p>
+								<p>打印计时结果到日志中</p>
+								<ul>
+									<li>
+										<p>ID</p>
+										<p>计时器ID
+											<br><span _sgn="precondition">先决</span>ID已定义
+										</p>
+									</li>
+									<li>
+										<p>Msg</p>
+										<p>信息文本格式，参照C语言 printf 格式控制，可变参数表中只有一个 64位浮点数 ，表示计时器所记录的时间</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">File 系</p>
+							<p>本地文件系统操作</p>
+							<hr>
+							<div class="func-info">
+								<p>:File:cpy</p>
+								<p>复制文件或文件夹</p>
+								<ul>
+									<li>
+										<p>Src</p>
+										<p>[输入]源路径</p>
+									</li>
+									<li>
+										<p>Dst</p>
+										<p>[输出]目标路径</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:File:rename</p>
+								<p>重命名某一目录下的文件或文件夹</p>
+								<ul>
+									<li>
+										<p>Dir</p>
+										<p>对象所在文件夹</p>
+									</li>
+									<li>
+										<p>OldName</p>
+										<p>对象原名</p>
+									</li>
+									<li>
+										<p>OldName</p>
+										<p>对象新名</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:File:remove</p>
+								<p>删除文件或文件夹</p>
+								<ul>
+									<li>
+										<p>Path</p>
+										<p>[输入]对象路径</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">Data 系</p>
+							<p>视为一般二进制数据处理</p>
+							<hr>
+							<div class="func-info">
+								<p>:Data:Compressor:ZLib:Compress</p>
+								<p>ZLIB 压缩文件</p>
+								<ul>
+									<li>
+										<p>SrcFile</p>
+										<p>[输入]源文件</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输出]目标文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Data:Compressor:ZLib:UnCompress</p>
+								<p>ZLIB 解压文件</p>
+								<ul>
+									<li>
+										<p>SrcFile</p>
+										<p>[输入]源文件</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输出]目标文件</p>
+									</li>
+									<li>
+										<p>DstCap</p>
+										<p>暂存解压结果的内存之容量，需不小于解压后大小</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Data:Encryptor:XOR:Crypt</p>
+								<p>XOR 加密文件</p>
+								<ul>
+									<li>
+										<p>PlainFile</p>
+										<p>[输入]明文文件</p>
+									</li>
+									<li>
+										<p>CipherFile</p>
+										<p>[输出]密文文件</p>
+									</li>
+									<li>
+										<p>Key</p>
+										<p>密钥，为一个Byte值，范围0~255</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Data:Encryptor:Base64:EnCrypt</p>
+								<p>Base64 加密文件</p>
+								<ul>
+									<li>
+										<p>PlainFile</p>
+										<p>[输入]明文文件</p>
+									</li>
+									<li>
+										<p>CipherFile</p>
+										<p>[输出]密文文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Data:Encryptor:Base64:DeCrypt</p>
+								<p>Base64 解密文件</p>
+								<ul>
+									<li>
+										<p>CipherFile</p>
+										<p>[输入]密文文件</p>
+									</li>
+									<li>
+										<p>PlainFile</p>
+										<p>[输出]明文文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">JSON 系</p>
+							<p>JSON文件操作</p>
+							<hr>
+							<div class="func-info">
+								<p>:JSON:Fmt</p>
+								<p>格式化JSON文件，格式由 <a>:Setting:JSON:Style:set</a> 设置</p>
+								<ul>
+									<li>
+										<p>SrcFile</p>
+										<p>[输入]源文件</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输出]目标文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">RTON 系</p>
+							<p>RTON文件操作。包括编|解码、加|解密</p>
+							<hr>
+							<div class="func-info">
+								<p>:RTON:Encoder:EnCode</p>
+								<p>编码JSON文件为RTON文件</p>
+								<ul>
+									<li>
+										<p>JSONFile</p>
+										<p>[输入]JSON文件</p>
+									</li>
+									<li>
+										<p>RTONFile</p>
+										<p>[输出]RTON文件</p>
+									</li>
+									<li>
+										<p>EnableStrIdx</p>
+										<p>开启字符串索引(0x81-&gt;0x90|0x91)
+											<br>可缩减生成的RTON数据大小，但<u>会降低编码效率</u>
+										</p>
+									</li>
+									<li>
+										<p>EnableRTIDType</p>
+										<p>对RTID型字符串启用专用的RTON类型(0x83)
+											<br>当表示某些<u>特殊RTID</u>(如 "RTID(xxx@.)")时，使用普通字符串形式会使游戏读取错误，应使用0x83类型
+										</p>
+									</li>
+									<li>
+										<p>IsWhole</p>
+										<p>输出数据是否为完整的RTON
+											<br><span _sgn="var">false</span>不做修改，编码结果为一个<u>RTON值单元</u>
+											<br><span _sgn="var">true&nbsp;</span>会将编码得到的值单元修饰为<u>完整RTON</u>；此时，<u>输入JSON必须为object</u>
+										</p>
+									</li>
+									<li>
+										<p>MemSz</p>
+										<p>暂存 RTONFile数据 所使用的内存空间大小</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:RTON:Encoder:DeCode</p>
+								<p>解码RTON文件得到JSON文件</p>
+								<ul>
+									<li>
+										<p>RTONFile</p>
+										<p>[输入]RTON文件</p>
+									</li>
+									<li>
+										<p>JSONFile</p>
+										<p>[输出]JSON文件</p>
+									</li>
+									<li>
+										<p>IsWhole</p>
+										<p>输入数据是否为完整的RTON
+											<br><span _sgn="var">false</span>数据源应为一个<u>RTON值单元</u>
+											<br><span _sgn="var">true&nbsp;</span>数据源须为一个<u>完整RTON</u>
+										</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:RTON:Encryptor:EnCrypt</p>
+								<p>加密RTON文件</p>
+								<p><span _sgn="precondition">ENABLE_RTON_CRYPTOR</span>public版本中此功能被禁止</p>
+								<ul>
+									<li>
+										<p>PlainFile</p>
+										<p>[输入]明文文件</p>
+									</li>
+									<li>
+										<p>CipherFile</p>
+										<p>[输出]密文文件</p>
+									</li>
+									<li>
+										<p>Key</p>
+										<p>加密密钥
+											<br><span _sgn="var"><abbr title="3.8.0 版本之前，此处为 “空字符串”。空值(null)与空字符串(string.length == 0)有所不同">null</abbr></span>使用中文版游戏内部密钥
+										</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:RTON:Encryptor:DeCrypt</p>
+								<p>解密RTON文件</p>
+								<p><strong>ENABLE_RTON_CRYPTOR</strong>：public版本中此功能被禁止</p>
+								<ul>
+									<li>
+										<p>CipherFile</p>
+										<p>[输入]密文文件</p>
+									</li>
+									<li>
+										<p>PlainFile</p>
+										<p>[输出]明文文件</p>
+									</li>
+									<li>
+										<p>Key</p>
+										<p><abbr title="与加密时所用密钥应一致">解密密钥</abbr>
+											<br><span _sgn="var"><abbr title="3.8.0 版本之前，此处为 “空字符串”。空值(null)与空字符串(string.length == 0)有所不同">null</abbr></span>使用中文版游戏内部密钥
+										</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">ResPkg 系</p>
+							<p>资源数据包处理。接受 DZ、PAK、RSGP、RSB 四类数据包结构体系</p>
+							<hr>
+							<div class="func-info">
+								<p>:ResPkg:DZ:Packer:Pack</p>
+								<p>打包DZ</p>
+								<ul>
+									<li>
+										<p>PkgFile</p>
+										<p>[输出]包文件</p>
+									</li>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]结构信息文件</p>
+									</li>
+									<li>
+										<p>ResDir</p>
+										<p>[输入]资源文件夹</p>
+									</li>
+									<li>
+										<p>MemSz</p>
+										<p>暂存 PkgFile数据 所使用的内存大小</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:ResPkg:DZ:Packer:UnPack</p>
+								<p>解包DZ</p>
+								<ul>
+									<li>
+										<p>PkgFile</p>
+										<p>[输入]包文件</p>
+									</li>
+									<li>
+										<p>InfoFile</p>
+										<p>[输出]结构信息文件
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+									<li>
+										<p>ResDir</p>
+										<p>[输出]资源文件夹
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:ResPkg:PAK:Packer:Pack</p>
+								<p>打包PAK</p>
+								<p>参数：参阅 <a>:ResPkg:DZ:Packer:Pack</a></p>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:ResPkg:PAK:Packer:UnPack</p>
+								<p>解包PAK</p>
+								<p>参数：参阅 <a>:ResPkg:DZ:Packer:UnPack</a></p>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:ResPkg:RSGP:Packer:Pack</p>
+								<p>打包RSGP</p>
+								<p>参数：参阅 <a>:ResPkg:DZ:Packer:Pack</a></p>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:ResPkg:RSGP:Packer:UnPack</p>
+								<p>解包RSGP</p>
+								<p>参数：参阅 <a>:ResPkg:DZ:Packer:UnPack</a></p>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:ResPkg:RSB:Packer:Pack</p>
+								<p>打包RSB</p>
+								<ul>
+									<li>
+										<p>PkgFile</p>
+										<p>[输出]包文件</p>
+									</li>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]结构信息文件</p>
+									</li>
+									<li>
+										<p>EmbeddedResInfoFile</p>
+										<p>[输入]结构信息文件2</p>
+									</li>
+									<li>
+										<p>PacketDir</p>
+										<p>[输入]子包文件夹
+											<br>提供子包；子包输出位置
+											<br><span _sgn="precondition">先决</span><span _sgn="code">PackFromGroup == false</span>
+										</p>
+										<p></p>
+									</li>
+									<li>
+										<p>ResDir</p>
+										<p>[输入]资源文件夹
+											<br>提供资源文件
+											<br><span _sgn="precondition">先决</span><span _sgn="code">PackFromGroup == false</span>
+										</p>
+									</li>
+									<li>
+										<p>GroupDir</p>
+										<p>[输入]资源群文件夹
+											<br><span _sgn="precondition">先决</span><span _sgn="code">PackFromGroup == true</span>
+										</p>
+									</li>
+									<li>
+										<p>GroupPacketFile</p>
+										<p>[输入]资源群子包文件名
+											<br>提供子包；子包输出位置
+											<br><span _sgn="precondition">先决</span><span _sgn="code">PackFromGroup == true</span>
+										</p>
+									</li>
+									<li>
+										<p>GroupResDir</p>
+										<p>[输入]资源群子包资源文件夹名
+											<br>提供资源文件
+											<br><span _sgn="precondition">先决</span><span _sgn="code">PackFromGroup == true</span>
+										</p>
+									</li>
+									<li>
+										<p>PackFromGroup</p>
+										<p>是否通过资源群文件体系进行打包
+											<br><span _sgn="var">false</span>使用<span _sgn="code">PacketDir &amp; ResDir</span>打包
+											<br><span _sgn="var">true&nbsp;</span>使用<span _sgn="code">GroupDir &amp; GroupPacketDir &amp; GroupResDir</span>打包
+										</p>
+									</li>
+									<li>
+										<p>ExportNewPacket</p>
+										<p>是否导出临时打包的子包
+											<br><span _sgn="var">false</span>无作为
+											<br><span _sgn="var">true&nbsp;</span>将临时打包的子包导出为RSGP文件，路径通过<span _sgn="code">PacketDir</span>或<span _sgn="code">GroupPacketFile</span>以及 子包所属资源群ID 决定
+										</p>
+									</li>
+									<li>
+										<p>UseReadyPacket</p>
+										<p>是否使用已存在的子包
+											<br><span _sgn="var">false</span>对所有子包进行重打包
+											<br><span _sgn="var">true&nbsp;</span>先检验<span _sgn="code">PacketDir</span>或<span _sgn="code">GroupPacketFile</span>指定的路径中是否存在子包文件，若存在，则读取该文件内容，并进行结构检验，若与RSB结构信息中记录的一致，便直接使用；否则，才进行子包的重打包
+										</p>
+									</li>
+									<li>
+										<p>MemSz</p>
+										<p>暂存 PkgFile数据 所使用的内存大小</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:ResPkg:RSB:Packer:UnPack</p>
+								<p>解包RSB</p>
+								<ul>
+									<li>
+										<p>PkgFile</p>
+										<p>[输入]包文件</p>
+									</li>
+									<li>
+										<p>InfoFile</p>
+										<p>[输出]结构信息文件
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+									<li>
+										<p>EmbeddedResInfoFile</p>
+										<p>[输出]结构信息文件2
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+									<li>
+										<p>PacketDir</p>
+										<p>[输出]<abbr title="RSB 内含的 RSGP">子包</abbr>文件夹
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+									<li>
+										<p>PacketInfoDir</p>
+										<p>[输出]子包结构信息文件夹
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+									<li>
+										<p>ResDir</p>
+										<p>[输出]资源文件夹
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+									<li>
+										<p>GroupDir</p>
+										<p>[输出]资源群文件夹
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+									<li>
+										<p>GroupPacketFile</p>
+										<p>[输出]资源群子包文件名
+											<br><span _sgn="precondition">先决</span><span _sgn="code">GroupDir != null</span>
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+									<li>
+										<p>GroupPacketInfoFile</p>
+										<p>[输出]资源群子包结构信息文件名
+											<br><span _sgn="precondition">先决</span><span _sgn="code">GroupDir != null</span>
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+									<li>
+										<p>GroupResDir</p>
+										<p>[输出]资源群子包资源文件夹名
+											<br><span _sgn="precondition">先决</span><span _sgn="code">GroupDir != null</span>
+											<br><span _sgn="var">null</span>不输出此项
+										</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">Info 系</p>
+							<p>信息文本处理</p>
+							<hr>
+							<div class="func-info">
+								<p>:Info:Purify</p>
+								<p>纯化Info</p>
+								<ul>
+									<li>
+										<p>Type</p>
+										<p>Info类型
+											</p><ul>
+												<li><span _sgn="var">"RSBInfoXOri"</span></li>
+												<li><span _sgn="var">"RSBInfoX"</span></li>
+												<li><span _sgn="var">"RSBInfo"</span></li>
+												<li><span _sgn="var">"RSGPInfo"</span></li>
+												<li><span _sgn="var">"AtlasInfoList"</span></li>
+											</ul>
+										<p></p>
+									</li>
+									<li>
+										<p>SrcFile</p>
+										<p>[输入]源文件</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输出]目标文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Info:Spliter:Split</p>
+								<p>分割Info</p>
+								<ul>
+									<li>
+										<p>Type</p>
+										<p>Info类型</p>
+									</li>
+									<li>
+										<p>Until</p>
+										<p>分割至Info类型
+											<br>与<span _sgn="code">Type</span>结合，取值如下（<span _sgn="code">Type + '|' + Until</span>）：
+											</p><ul>
+												<li><span _sgn="var">"RSBInfoX|Group"</span></li>
+												<li><span _sgn="var">"RSBInfoX|SubGroup"</span></li>
+												<li><span _sgn="var">"RSBInfoX|Res"</span></li>
+												<li><span _sgn="var">"RSBInfo|Group"</span></li>
+												<li><span _sgn="var">"RSBInfo|SubGroup"</span></li>
+											</ul>
+										<p></p>
+									</li>
+									<li>
+										<p>SrcFile</p>
+										<p>[输入]源文件</p>
+									</li>
+									<li>
+										<p>DstDir</p>
+										<p>[输出]目标文件夹</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Info:Spliter:Cat</p>
+								<p>拼接Info</p>
+								<ul>
+									<li>
+										<p>Type</p>
+										<p>Info类型</p>
+									</li>
+									<li>
+										<p>Until</p>
+										<p>分割至Info类型</p>
+									</li>
+									<li>
+										<p>SrcDir</p>
+										<p>[输入]源文件夹</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输出]目标文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Info:Cnv</p>
+								<p>转换Info</p>
+								<ul>
+									<li>
+										<p>SrcType</p>
+										<p>Info原始类型</p>
+									</li>
+									<li>
+										<p>DstType</p>
+										<p>Info目标类型
+											<br>与<span _sgn="code">SrcType</span>结合，取值如下（<span _sgn="code">SrcType + '|' + DstType</span>）：
+											</p><ul>
+												<li><span _sgn="var">"RSBInfoXOri|RSBInfoX"</span></li>
+												<li><span _sgn="var">"RSBInfoX|RSBInfoXOri"</span></li>
+												<li><span _sgn="var">"RSBInfoX|RSBInfo"</span></li>
+												<li><span _sgn="var">"RSBInfoX|AtlasInfoList"</span></li>
+												<li><span _sgn="var">"RSBInfo|AtlasInfoList"</span></li>
+												<li><span _sgn="var">"RSBInfoX:SubGroup|RSGPInfo"</span></li>
+											</ul>
+										<p></p>
+									</li>
+									<li>
+										<p>SrcFile</p>
+										<p>[输入]Info原始文件</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输出]Info目标文件</p>
+									</li>
+									<li>
+										<p>ExtraFile</p>
+										<p>[输入]额外所需文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">Image 系</p>
+							<p>图像操作</p>
+							<hr>
+							<div class="func-info">
+								<p>:Image:Spliter:Split</p>
+								<p>分割Atlas</p>
+								<ul>
+									<li>
+										<p>Sz</p>
+										<p>Atlas尺寸</p>
+									</li>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]信息文件(List[Image-Info])</p>
+									</li>
+									<li>
+										<p>AtlasFile</p>
+										<p>[输入]Atlas文件</p>
+									</li>
+									<li>
+										<p>ImgDir</p>
+										<p>[输出]Image文件夹</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Image:Spliter:SplitByAtlasInfo</p>
+								<p>分割Atlas，通过AtlasInfo</p>
+								<ul>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]信息文件(Atlas-Info 或 List[Atlas-Info])</p>
+									</li>
+									<li>
+										<p>AtlasDir</p>
+										<p>[输入]Atlas文件夹</p>
+									</li>
+									<li>
+										<p>ImgDir</p>
+										<p>[输出]Image文件夹</p>
+									</li>
+									<li>
+										<p>UseSingleDir</p>
+										<p>是否为每个Atlas分配独立的文件夹</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Image:Spliter:Cat</p>
+								<p>合并Atlas</p>
+								<ul>
+									<li>
+										<p>Sz</p>
+										<p>Atlas尺寸</p>
+									</li>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]信息文件(List[Image-Info])</p>
+									</li>
+									<li>
+										<p>ImgDir</p>
+										<p>[输入]Image文件夹</p>
+									</li>
+									<li>
+										<p>AtlasFile</p>
+										<p>[输出]Atlas文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Image:Spliter:CatByAtlasInfo</p>
+								<p>合并Atlas，通过AtlasInfo</p>
+								<ul>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]信息文件(Atlas-Info 或 List[Atlas-Info])</p>
+									</li>
+									<li>
+										<p>ImgDir</p>
+										<p>[输入]Image文件夹</p>
+									</li>
+									<li>
+										<p>AtlasDir</p>
+										<p>[输出]Atlas文件夹</p>
+									</li>
+									<li>
+										<p>UseSingleDir</p>
+										<p>是否为每个Atlas分配独立的文件夹</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Image:Encoder:EnCode</p>
+								<p>将PNG图像转化为特定格式纹理</p>
+								<ul>
+									<li>
+										<p>ImgFile</p>
+										<p>[输入]PNG图像文件</p>
+									</li>
+									<li>
+										<p>DataFile</p>
+										<p>[输出]纹理文件</p>
+									</li>
+									<li>
+										<p>Sz</p>
+										<p>图像尺寸</p>
+									</li>
+									<li>
+										<p>Fmt</p>
+										<p>纹理格式</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Image:Encoder:EnCodeByAtlasInfo</p>
+								<p>将PNG图像转化为特定格式纹理，通过AtlasInfo</p>
+								<ul>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]信息文件</p>
+									</li>
+									<li>
+										<p>ImgDir</p>
+										<p>[输入]PNG图像文件夹</p>
+									</li>
+									<li>
+										<p>DataDir</p>
+										<p>[输出]纹理文件夹</p>
+									</li>
+									<li>
+										<p>DataFileExtension</p>
+										<p>纹理文件拓展名</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Image:Encoder:DeCode</p>
+								<p>将特定格式纹理转化为PNG图像</p>
+								<ul>
+									<li>
+										<p>DataFile</p>
+										<p>[输入]纹理文件</p>
+									</li>
+									<li>
+										<p>ImgFile</p>
+										<p>[输出]PNG图像文件</p>
+									</li>
+									<li>
+										<p>Sz</p>
+										<p>图像尺寸</p>
+									</li>
+									<li>
+										<p>Fmt</p>
+										<p>纹理格式</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Image:Encoder:DeCodeByAtlasInfo</p>
+								<p>将特定格式纹理转化为PNG图像，通过AtlasInfo</p>
+								<ul>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]信息文件</p>
+									</li>
+									<li>
+										<p>DataDir</p>
+										<p>[输入]纹理文件夹</p>
+									</li>
+									<li>
+										<p>ImgDir</p>
+										<p>[输出]PNG图像文件夹</p>
+									</li>
+									<li>
+										<p>DataFileExtension</p>
+										<p>纹理文件拓展名</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">Anim:PopcapAnim 系</p>
+							<p>PAM(Popcap-AniMate) 编码与转换</p>
+							<hr>
+							<div class="func-info">
+								<p>:Anim:PopcapAnim:Encoder:EnCode</p>
+								<p>编码PAM文件</p>
+								<p><span _sgn="precondition">ENABLE_PAM_ENCODER_PLAIN</span>public版本中此功能被禁止</p>
+								<ul>
+									<li>
+										<p>DataFile</p>
+										<p>[输出]PAM文件</p>
+									</li>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]PAM信息文件</p>
+									</li>
+									<li>
+										<p>MemSz</p>
+										<p>暂存 DataFile数据 所使用的内存空间大小</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Anim:PopcapAnim:Encoder:DeCode</p>
+								<p>解码PAM文件</p>
+								<p><span _sgn="precondition">ENABLE_PAM_ENCODER_PLAIN</span>public版本中此功能被禁止</p>
+								<ul>
+									<li>
+										<p>DataFile</p>
+										<p>[输入]PAM文件</p>
+									</li>
+									<li>
+										<p>InfoFile</p>
+										<p>[输出]PAM信息文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Anim:PopcapAnim:Converter:ToXFL</p>
+								<p>将PAM信息文件转化为XFL文件体系</p>
+								<p><span _sgn="precondition">ENABLE_PAM_ENCODER_PLAIN</span>public版本中此功能被禁止</p>
+								<ul>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]PAM信息文件</p>
+									</li>
+									<li>
+										<p>XFLDir</p>
+										<p>[输出]XFL文件夹</p>
+									</li>
+									<li>
+										<p>ImgSz</p>
+										<p>动画中所用图像的尺寸规格，同RSB中的res属性。会影响输出XFL中图像显示效果</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Anim:PopcapAnim:Converter:FromXFL</p>
+								<p>将XFL文件体系转化为PAM信息文件</p>
+								<p><span _sgn="precondition">ENABLE_PAM_ENCODER_PLAIN</span>public版本中此功能被禁止</p>
+								<ul>
+									<li>
+										<p>InfoFile</p>
+										<p>[输出]PAM信息文件</p>
+									</li>
+									<li>
+										<p>XFLDir</p>
+										<p>[输入]XFL文件夹</p>
+									</li>
+									<li>
+										<p>ImgSz</p>
+										<p>动画中所用图像的尺寸规格，同RSB中的res属性</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Anim:PopcapAnim:Converter:XFLScaleCnv</p>
+								<p>转换XFL文件体系中图像信息的尺寸规格</p>
+								<ul>
+									<li>
+										<p>XFLDir</p>
+										<p>[输入&amp;输出]XFL文件夹</p>
+									</li>
+									<li>
+										<p>SrcSz</p>
+										<p>原始尺寸规格</p>
+									</li>
+									<li>
+										<p>DstSz</p>
+										<p>目标尺寸规格</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Anim:PopcapAnim:Converter:ToCSSInfo</p>
+								<p>将PAM信息文件转化为适用于<span _sgn="mark">动画查看器</span>所需的CSS信息文件</p>
+								<p><span _sgn="precondition">ENABLE_PAM_ENCODER_PLAIN</span>public版本中此功能被禁止</p>
+								<ul>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]PAM信息文件</p>
+									</li>
+									<li>
+										<p>CSSInfoFile</p>
+										<p>[输出]CSS信息文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Anim:PopcapAnim:Converter:[ToXFL|FromXFL|ToCSSInfo]_OneStep</p>
+								<p>直接与PAM文件进行转换，不做详解</p>
+							</div>
+							<hr>
+							<p class="heading-minor">Aduio:WwiseEncodedMedia 系</p>
+							<p>WEM(Wwise-EncodedMedia) 处理。未开发完全。仅限Windows，需构建所需环境，参阅 <a href="https://47.98.153.48/taiji-legacy/#wem-cnv-env-desc">WEM转换相关设置</a></p>
+							<hr>
+							<div class="func-info">
+								<p>:Aduio:WwiseEncodedMedia:Encoder:DeCode</p>
+								<p>转换WEM为WAV；支持三类WEM格式<span _sgn="mark">PCM | AAC | Vorbis</span></p>
+								<ul>
+									<li>
+										<p>EncodedFile</p>
+										<p>[输入]WEM文件</p>
+									</li>
+									<li>
+										<p>AudioFile</p>
+										<p>[输出]WAV文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">Aduio:WwiseSoundBank 系</p>
+							<p>Wwise-BNK 相关函数。并无多大用处</p>
+							<hr>
+							<div class="func-info">
+								<p>:Aduio:WwiseSoundBank:Packer:Pack</p>
+								<p>打包SoundBank</p>
+								<ul>
+									<li>
+										<p>DataFile</p>
+										<p>[输出]BNK文件</p>
+									</li>
+									<li>
+										<p>MainDir</p>
+										<p>[输入]解包数据文件夹</p>
+									</li>
+									<li>
+										<p>MemSz</p>
+										<p>暂存 DataFile数据 所使用的内存空间大小</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Aduio:WwiseSoundBank:Packer:UnPack</p>
+								<p>解包SoundBank</p>
+								<ul>
+									<li>
+										<p>DataFile</p>
+										<p>[输入]BNK文件</p>
+									</li>
+									<li>
+										<p>MainDir</p>
+										<p>[输出]解包数据文件夹</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<p class="heading-minor">Expand 系</p>
+							<p>功能拓展</p>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:JSONPatch:Apply</p>
+								<p>应用JSON-Patch至JSON</p>
+								<ul>
+									<li>
+										<p>PatchFile</p>
+										<p>[输入]Patch文件</p>
+									</li>
+									<li>
+										<p>SrcFile</p>
+										<p>[输入]始态JSON文件</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输出]终态JSON文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:JSONPatch:Diff</p>
+								<p>求两个JSON的差异，取得由始态至终态的JSON-Patch</p>
+								<ul>
+									<li>
+										<p>SrcFile</p>
+										<p>[输入]始态JSON文件</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输入]终态JSON文件</p>
+									</li>
+									<li>
+										<p>PatchFile</p>
+										<p>[输出]Patch文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:RSBPatchX:Apply</p>
+								<p>应用RSB-Patch-X至已解包的RSB数据包文件体系中</p>
+								<ul>
+									<li>
+										<p>PatchFile</p>
+										<p>[输入]Patch文件</p>
+									</li>
+									<li>
+										<p>SrcInfoXFile</p>
+										<p>[输入]原始InfoX文件</p>
+									</li>
+									<li>
+										<p>SrcInfoFile</p>
+										<p>[输入]原始Info文件</p>
+									</li>
+									<li>
+										<p>DstInfoXFile</p>
+										<p>[输出]结果InfoX文件</p>
+									</li>
+									<li>
+										<p>DstInfoFile</p>
+										<p>[输出]结果Info文件</p>
+									</li>
+									<li>
+										<p>ApplyToResFile</p>
+										<p>是否应用到RSB文件体系</p>
+									</li>
+									<li>
+										<p>SrcResDir</p>
+										<p>[输入]源资源文件目录
+											<br><span _sgn="precondition">先决</span><span _sgn="code">ApplyToResFile == true</span>
+										</p>
+									</li>
+									<li>
+										<p>DstPacketDir</p>
+										<p>[输入&amp;输出]目标Packet文件夹
+											<br><span _sgn="precondition">先决</span><span _sgn="code">ApplyToResFile == true</span>
+										</p>
+									</li>
+									<li>
+										<p>DstResDir</p>
+										<p>[输入&amp;输出]目标Res文件夹
+											<br><span _sgn="precondition">先决</span><span _sgn="code">ApplyToResFile == true</span>
+										</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:PvZ2Mod:Intro</p>
+								<p>初始化PvZ2Mod环境</p>
+								<ul>
+									<li>
+										<p>EnvFile</p>
+										<p>[输入]Mod环境配置文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:PvZ2Mod:Outro</p>
+								<p>回复PvZ2Mod环境</p>
+								<ul>
+									<li>
+										<p>EnvFile</p>
+										<p>[输入]Mod环境配置文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:PvZ2Mod:Apply</p>
+								<p>应用一个MOD包</p>
+								<ul>
+									<li>
+										<p>EnvFile</p>
+										<p>[输入]Mod环境配置文件</p>
+									</li>
+									<li>
+										<p>ModDir</p>
+										<p>[输入]Mod文件夹</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:PvZ2LawnStringText:UpGrade</p>
+								<p>转换LawnString旧版适用的文本文件至新版适用的JSON文件</p>
+								<ul>
+									<li>
+										<p>OldStyleFile</p>
+										<p>[输入]TXT文件</p>
+									</li>
+									<li>
+										<p>NewStyleFile</p>
+										<p>[输出]JSON文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:PvZ2LawnStringText:DownGrade</p>
+								<p>转换LawnString新版适用的JSON文件至旧版适用的文本文件</p>
+								<ul>
+									<li>
+										<p>NewStyleFile</p>
+										<p>[输入]JSON文件</p>
+									</li>
+									<li>
+										<p>OldStyleFile</p>
+										<p>[输出]TXT文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:RSBSMF:Compress</p>
+								<p>压缩.RSB.SMF文件</p>
+								<ul>
+									<li>
+										<p>RawFile</p>
+										<p>[输入]原始数据</p>
+									</li>
+									<li>
+										<p>RipeFile</p>
+										<p>[输出]压缩后数据</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:RSBSMF:UnCompress</p>
+								<p>解压.RSB.SMF文件</p>
+								<ul>
+									<li>
+										<p>RipeFile</p>
+										<p>[输入]压缩后数据</p>
+									</li>
+									<li>
+										<p>RawFile</p>
+										<p>[输出]原始数据</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:rsbDataDisturb</p>
+								<p>混淆RSB文件结构，防止解包工具提取数据包资源
+									<br>对于<span _sgn="mark">QuickBMS 或 PvZ2Tool</span>，混淆功能始终起作用
+									<br>对于<span _sgn="mark">TaiJi(SPC-Util)</span>，需要包内存在<span _sgn="code">res=368</span>的子群，否则仍有被拆包的可能
+								</p>
+								<ul>
+									<li>
+										<p>SrcFile</p>
+										<p>[输入]原始RSB文件</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输出]混淆后的RSB文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:renameFileCaseByRSBInfoX</p>
+								<p>通过RSBInfoX文件重命名RSB文件体系中的res文件名</p>
+								<ul>
+									<li>
+										<p>InfoFile</p>
+										<p>[输入]InfoX文件</p>
+									</li>
+									<li>
+										<p>TgtDir</p>
+										<p>[输出]目标res文件夹</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:mixWwiseSoundBankHIRC</p>
+								<p>合并两个BNK-HIRC-JSON的数据</p>
+								<ul>
+									<li>
+										<p>SrcAFile</p>
+										<p>[输入]源文件A</p>
+									</li>
+									<li>
+										<p>SrcBFile</p>
+										<p>[输入]源文件B</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输出]目标文件</p>
+									</li>
+								</ul>
+							</div>
+							<hr>
+							<div class="func-info">
+								<p>:Expand:removeUnityAssetHeader</p>
+								<p>移除文件的前8个字节</p>
+								<ul>
+									<li>
+										<p>SrcFile</p>
+										<p>[输入]源文件</p>
+									</li>
+									<li>
+										<p>DstFile</p>
+										<p>[输出]目标文件</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<hr>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="pvz2mod" class="mdui-container-fluid" style="display: none;">
+			<div id="pvz2mod_table_shell" style="height: 377px;">
+				<table class="mdui-table mdui-table-hoverable">
+					<thead>
+						<tr>
+							<th style="width: 30%">文件</th>
+							<th style="width: 30%">说明</th>
+							<th style="width: 20%">作者</th>
+							<th style="width: 10%">更新时间</th>
+							<th style="width: 10%">下载</th>
+						</tr>
+					</thead>
+					<tbody id="pvz2mod_table_body"><tr><td><p>【汉化】全局文本汉化v831（Miracle汉化组）.tjpvz2mod.zip</p></td><td><p>全局文本汉化，适配国际版8.3.1，文本由Miracle汉化组提供</p></td><td><p>smallpc &amp; Miracle汉化组</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90%E6%B1%89%E5%8C%96%E3%80%91%E5%85%A8%E5%B1%80%E6%96%87%E6%9C%AC%E6%B1%89%E5%8C%96v831%EF%BC%88Miracle%E6%B1%89%E5%8C%96%E7%BB%84%EF%BC%89.tjpvz2mod.zip" download="【汉化】全局文本汉化v831（Miracle汉化组）.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【汉化】全局文本汉化v842（Miracle汉化组）【临时】.tjpvz2mod.zip</p></td><td><p>全局文本汉化，适配国际版8.4.2，文本由Miracle汉化组提供，8.4新增文本尚未汉化</p></td><td><p>smallpc &amp; Miracle汉化组</p></td><td><p>20-10-20</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90%E6%B1%89%E5%8C%96%E3%80%91%E5%85%A8%E5%B1%80%E6%96%87%E6%9C%AC%E6%B1%89%E5%8C%96v842%EF%BC%88Miracle%E6%B1%89%E5%8C%96%E7%BB%84%EF%BC%89%E3%80%90%E4%B8%B4%E6%97%B6%E3%80%91.tjpvz2mod.zip" download="【汉化】全局文本汉化v842（Miracle汉化组）【临时】.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【汉化】全局文本汉化v851（Miracle汉化组）.tjpvz2mod.zip</p></td><td><p>全局文本汉化，适配国际版8.5.1，文本由Miracle汉化组提供</p></td><td><p>smallpc &amp; Miracle汉化组</p></td><td><p>20-11-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90%E6%B1%89%E5%8C%96%E3%80%91%E5%85%A8%E5%B1%80%E6%96%87%E6%9C%AC%E6%B1%89%E5%8C%96v851%EF%BC%88Miracle%E6%B1%89%E5%8C%96%E7%BB%84%EF%BC%89.tjpvz2mod.zip" download="【汉化】全局文本汉化v851（Miracle汉化组）.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>游戏字体中文支持（字体由BEAST&amp;MF提供）.tjpvz2mod.zip</p></td><td><p>游戏中可显示中文</p></td><td><p>smallpc &amp; BEAST &amp; MF</p></td><td><p>20-10-20</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E6%B8%B8%E6%88%8F%E5%AD%97%E4%BD%93%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81%EF%BC%88%E5%AD%97%E4%BD%93%E7%94%B1BEAST&amp;MF%E6%8F%90%E4%BE%9B%EF%BC%89.tjpvz2mod.zip" download="游戏字体中文支持（字体由BEAST&amp;MF提供）.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>拓展关卡恢复.tjpvz2mod.zip</p></td><td><p>恢复新版本中被隐藏的 埃及、海盗、西部、侏罗纪、现代 五个世界的拓展关卡</p></td><td><p>CZ</p></td><td><p>20-09-06</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E6%8B%93%E5%B1%95%E5%85%B3%E5%8D%A1%E6%81%A2%E5%A4%8D.tjpvz2mod.zip" download="拓展关卡恢复.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>MusicRecover.tjpvz2mod.zip</p></td><td><p>回复各个世界的小游戏与BOSS战专有音乐，保留新版本音效</p></td><td><p>smallpc</p></td><td><p>20-09-10</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/MusicRecover.tjpvz2mod.zip" download="MusicRecover.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【RSB】移除资源子群-384.tjpvz2mod.zip</p></td><td><p>数据包精简，移除资源子群-384</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90RSB%E3%80%91%E7%A7%BB%E9%99%A4%E8%B5%84%E6%BA%90%E5%AD%90%E7%BE%A4-384.tjpvz2mod.zip" download="【RSB】移除资源子群-384.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【RSB】移除资源子群-768.tjpvz2mod.zip</p></td><td><p>数据包精简，移除资源子群-768</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90RSB%E3%80%91%E7%A7%BB%E9%99%A4%E8%B5%84%E6%BA%90%E5%AD%90%E7%BE%A4-768.tjpvz2mod.zip" download="【RSB】移除资源子群-768.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【RSB】移除资源子群-1536.tjpvz2mod.zip</p></td><td><p>数据包精简，移除资源子群-1536</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90RSB%E3%80%91%E7%A7%BB%E9%99%A4%E8%B5%84%E6%BA%90%E5%AD%90%E7%BE%A4-1536.tjpvz2mod.zip" download="【RSB】移除资源子群-1536.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】开启庭院四植季节装扮.tjpvz2mod.zip</p></td><td><p>【LIVE】开启庭院四植季节装扮</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E5%BC%80%E5%90%AF%E5%BA%AD%E9%99%A2%E5%9B%9B%E6%A4%8D%E5%AD%A3%E8%8A%82%E8%A3%85%E6%89%AE.tjpvz2mod.zip" download="【LIVE】开启庭院四植季节装扮.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】更改庭院四植季节装扮为PVZ英雄.tjpvz2mod.zip</p></td><td><p>更改庭院四植季节装扮为PVZ英雄</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E6%9B%B4%E6%94%B9%E5%BA%AD%E9%99%A2%E5%9B%9B%E6%A4%8D%E5%AD%A3%E8%8A%82%E8%A3%85%E6%89%AE%E4%B8%BAPVZ%E8%8B%B1%E9%9B%84.tjpvz2mod.zip" download="【LIVE】更改庭院四植季节装扮为PVZ英雄.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】更改庭院四植季节装扮为情人节.tjpvz2mod.zip</p></td><td><p>更改庭院四植季节装扮为情人节</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E6%9B%B4%E6%94%B9%E5%BA%AD%E9%99%A2%E5%9B%9B%E6%A4%8D%E5%AD%A3%E8%8A%82%E8%A3%85%E6%89%AE%E4%B8%BA%E6%83%85%E4%BA%BA%E8%8A%82.tjpvz2mod.zip" download="【LIVE】更改庭院四植季节装扮为情人节.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】更改庭院四植季节装扮为圣诞节.tjpvz2mod.zip</p></td><td><p>更改庭院四植季节装扮为圣诞节</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E6%9B%B4%E6%94%B9%E5%BA%AD%E9%99%A2%E5%9B%9B%E6%A4%8D%E5%AD%A3%E8%8A%82%E8%A3%85%E6%89%AE%E4%B8%BA%E5%9C%A3%E8%AF%9E%E8%8A%82.tjpvz2mod.zip" download="【LIVE】更改庭院四植季节装扮为圣诞节.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】更改庭院四植季节装扮为万圣节.tjpvz2mod.zip</p></td><td><p>更改庭院四植季节装扮为万圣节</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E6%9B%B4%E6%94%B9%E5%BA%AD%E9%99%A2%E5%9B%9B%E6%A4%8D%E5%AD%A3%E8%8A%82%E8%A3%85%E6%89%AE%E4%B8%BA%E4%B8%87%E5%9C%A3%E8%8A%82.tjpvz2mod.zip" download="【LIVE】更改庭院四植季节装扮为万圣节.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】开启宠物僵尸.tjpvz2mod.zip</p></td><td><p>开启宠物僵尸</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E5%BC%80%E5%90%AF%E5%AE%A0%E7%89%A9%E5%83%B5%E5%B0%B8.tjpvz2mod.zip" download="【LIVE】开启宠物僵尸.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【ZOMBIE】更改宠物僵尸类型为花瓶巨人.tjpvz2mod.zip</p></td><td><p>更改宠物僵尸类型为花瓶巨人</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90ZOMBIE%E3%80%91%E6%9B%B4%E6%94%B9%E5%AE%A0%E7%89%A9%E5%83%B5%E5%B0%B8%E7%B1%BB%E5%9E%8B%E4%B8%BA%E8%8A%B1%E7%93%B6%E5%B7%A8%E4%BA%BA.tjpvz2mod.zip" download="【ZOMBIE】更改宠物僵尸类型为花瓶巨人.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】关闭动态难度锁定中值.tjpvz2mod.zip</p></td><td><p>关闭动态难度锁定中值</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E5%85%B3%E9%97%AD%E5%8A%A8%E6%80%81%E9%9A%BE%E5%BA%A6%E9%94%81%E5%AE%9A%E4%B8%AD%E5%80%BC.tjpvz2mod.zip" download="【LIVE】关闭动态难度锁定中值.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】开启关卡可掉落钻石.tjpvz2mod.zip</p></td><td><p>关卡中杀死僵尸可能掉落钻石</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E5%BC%80%E5%90%AF%E5%85%B3%E5%8D%A1%E5%8F%AF%E6%8E%89%E8%90%BD%E9%92%BB%E7%9F%B3.tjpvz2mod.zip" download="【LIVE】开启关卡可掉落钻石.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】开启所有砸罐子关卡.tjpvz2mod.zip</p></td><td><p>开启所有砸罐子关卡（未来、黑暗、海滩）</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E5%BC%80%E5%90%AF%E6%89%80%E6%9C%89%E7%A0%B8%E7%BD%90%E5%AD%90%E5%85%B3%E5%8D%A1.tjpvz2mod.zip" download="【LIVE】开启所有砸罐子关卡.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】无尽模式可继续.tjpvz2mod.zip</p></td><td><p>无尽模式可继续</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E6%97%A0%E5%B0%BD%E6%A8%A1%E5%BC%8F%E5%8F%AF%E7%BB%A7%E7%BB%AD.tjpvz2mod.zip" download="【LIVE】无尽模式可继续.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【LIVE】允许砸罐子模式购买PF.tjpvz2mod.zip</p></td><td><p>允许砸罐子模式购买PF</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90LIVE%E3%80%91%E5%85%81%E8%AE%B8%E7%A0%B8%E7%BD%90%E5%AD%90%E6%A8%A1%E5%BC%8F%E8%B4%AD%E4%B9%B0PF.tjpvz2mod.zip" download="【LIVE】允许砸罐子模式购买PF.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【PLANT】免费金卡.tjpvz2mod.zip</p></td><td><p>免费金卡</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90PLANT%E3%80%91%E5%85%8D%E8%B4%B9%E9%87%91%E5%8D%A1.tjpvz2mod.zip" download="【PLANT】免费金卡.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【PLANT】去除特殊植物使用世界限制.tjpvz2mod.zip</p></td><td><p>去除特殊植物使用世界限制：如逆时草可全世界使用</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90PLANT%E3%80%91%E5%8E%BB%E9%99%A4%E7%89%B9%E6%AE%8A%E6%A4%8D%E7%89%A9%E4%BD%BF%E7%94%A8%E4%B8%96%E7%95%8C%E9%99%90%E5%88%B6.tjpvz2mod.zip" download="【PLANT】去除特殊植物使用世界限制.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>【PLANT】移除植物等级.tjpvz2mod.zip</p></td><td><p>移除植物等级</p></td><td><p>smallpc</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/pvz2mod/%E3%80%90PLANT%E3%80%91%E7%A7%BB%E9%99%A4%E6%A4%8D%E7%89%A9%E7%AD%89%E7%BA%A7.tjpvz2mod.zip" download="【PLANT】移除植物等级.tjpvz2mod.zip"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr></tbody>
+				</table>
+			</div>
+		</div>
+		<div id="download" class="mdui-container-fluid" style="display: none;">
+			<div id="download_table_shell" style="height: 377px;">
+				<table class="mdui-table mdui-table-hoverable">
+					<thead>
+						<tr>
+							<th style="width: 20%">文件</th>
+							<th style="width: 50%">说明</th>
+							<th style="width: 20%">更新时间</th>
+							<th style="width: 10%">下载</th>
+						</tr>
+					</thead>
+					<tbody id="download_table_body"><tr><td><p>太極-Loader.exe</p></td><td><p>[Windows-x64] 太極 Loader(加载程序) 1.5.0</p></td><td><p>20-10-??</p></td><td><a href="https://47.98.153.48/taiji-legacy/download/res/app/app.windows.loader-1.5.0.exe" download="太極-Loader.exe"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>太極-Loader-32.exe</p></td><td><p>[Windows-x32] 太極 Loader(加载程序) 1.5.0</p></td><td><p>20-10-??</p></td><td><a href="https://47.98.153.48/taiji-legacy/download/res/app/app.windows.loader-1.5.0-32.exe" download="太極-Loader-32.exe"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>太極.apk</p></td><td><p>[Android-22-ARM] 太極 程序apk 1.9.0</p></td><td><p>20-10-??</p></td><td><a href="https://47.98.153.48/taiji-legacy/download/res/app/app.android-1.9.0.apk" download="太極.apk"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr><tr><td><p>mod.env.json</p></td><td><p>PvZ2-MOD环境配置文件</p></td><td><p>20-08-24</p></td><td><a href="https://47.98.153.48/taiji-legacy/download/res/mod.env.json" download="mod.env.json"><button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">file_download</i></button></a></td></tr></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script>
+		init();
+	</script>
+
+
+<div class="mdui-tooltip" id="2f0fa6ff-ef91-772c-9a21-e92d9e08410c" style="transform-origin: center top; top: 2863.33px; left: 503.672px; margin-left: -32px; margin-top: 48px;">程序下载</div><div class="mdui-tooltip mdui-tooltip-open" id="33e09ca2-a79e-7fca-a4ac-7d1d59f21431" style="transform-origin: center top; top: 2472px; left: 167.891px; margin-left: -32px; margin-top: 48px;">用户手册</div><div class="mdui-tooltip" id="c981071d-91b2-85d8-8929-1254906d1282" style="transform-origin: center top; top: 3254.67px; left: 839.453px; margin-left: -47.5px; margin-top: 48px;">PvZ2Mod下载</div></body></html>
