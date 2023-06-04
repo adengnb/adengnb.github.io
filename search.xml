@@ -42,22 +42,22 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title></title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
-        <content type="html"><![CDATA[<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><h2 id="更新公告"><a href="#更新公告" class="headerlink" title="更新公告"></a>更新公告</h2><h2 id="闲聊"><a href="#闲聊" class="headerlink" title="闲聊"></a>闲聊</h2><h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><h2 id="心情"><a href="#心情" class="headerlink" title="心情"></a>心情</h2>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>友链</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><h2 id="更新公告"><a href="#更新公告" class="headerlink" title="更新公告"></a>更新公告</h2><h2 id="闲聊"><a href="#闲聊" class="headerlink" title="闲聊"></a>闲聊</h2><h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><h2 id="心情"><a href="#心情" class="headerlink" title="心情"></a>心情</h2>]]></content>
       
     </entry>
     
@@ -75,9 +75,9 @@
     
     
     <entry>
-      <title></title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
